@@ -149,15 +149,15 @@ class Configuration implements ConfigurationInterface
 
     private function addTemplateSection(ArrayNodeDefinition $node)
     {
-        $node
-            ->children()
-                ->arrayNode('template')
-                    ->addDefaultsIfNotSet()
-                    ->children()
-                        ->scalarNode('engine')->defaultValue('twig')->end()
-                    ->end()
-                ->end()
-            ->end()
-        ;
+//        $node
+//            ->children()
+//                ->arrayNode('template')
+//                    ->addDefaultsIfNotSet()
+//                    ->children()
+//                        ->scalarNode('engine')->defaultValue('twig')->end()
+//                    ->end()
+//                ->end()
+//            ->end()
+//        ;
     }
 }
