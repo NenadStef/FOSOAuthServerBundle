@@ -19,7 +19,8 @@ use FOS\OAuthServerBundle\Model\ClientInterface;
 use FOS\OAuthServerBundle\Model\ClientManagerInterface;
 use OAuth2\OAuth2;
 use OAuth2\OAuth2ServerException;
-use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
+//use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
+use Twig\Environment;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\Form\Form;
 use Symfony\Component\HttpFoundation\Request;
@@ -65,7 +66,7 @@ class AuthorizeController
     private $oAuth2Server;
 
     /**
-     * @var EngineInterface
+     * @var Environment
      */
     private $templating;
 
@@ -109,7 +110,7 @@ class AuthorizeController
      * @param Form                     $authorizeForm
      * @param AuthorizeFormHandler     $authorizeFormHandler
      * @param OAuth2                   $oAuth2Server
-     * @param EngineInterface          $templating
+     * @param Environment          $templating
      * @param TokenStorageInterface    $tokenStorage
      * @param UrlGeneratorInterface    $router
      * @param ClientManagerInterface   $clientManager
@@ -122,7 +123,8 @@ class AuthorizeController
         Form $authorizeForm,
         AuthorizeFormHandler $authorizeFormHandler,
         OAuth2 $oAuth2Server,
-        EngineInterface $templating,
+        //EngineInterface $templating,
+        Environment $templating,
         TokenStorageInterface $tokenStorage,
         UrlGeneratorInterface $router,
         ClientManagerInterface $clientManager,
@@ -261,9 +263,14 @@ class AuthorizeController
     /**
      * @throws \RuntimeException
      */
-    protected function renderAuthorize(array $data, EngineInterface $engine, string $engineType): Response
+    protected function renderAuthorize(array $data, Environment $engine, string $engineType): Response
     {
-        return $engine->renderResponse(
+//        return $engine->renderResponse(
+//            '@FOSOAuthServer/Authorize/authorize.html.'.$engineType,
+//            $data
+//        );
+
+        return $engine->render(
             '@FOSOAuthServer/Authorize/authorize.html.'.$engineType,
             $data
         );
