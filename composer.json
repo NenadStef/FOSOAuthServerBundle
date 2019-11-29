@@ -23,7 +23,7 @@
     ],
     "require": {
         "php": "^7.1",
-        "friendsofsymfony/oauth2-php": "dev-symfony-5-0-compatibility",
+        "friendsofsymfony/oauth2-php": "symfony-5-0-compatibility",
         "symfony/dependency-injection": "~3.0|~4.0 || ^5.0",
         "symfony/framework-bundle": "~3.0|~4.0 || ^5.0",
         "symfony/security-bundle": "~3.0|~4.0 || ^5.0"
