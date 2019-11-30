@@ -30,14 +30,6 @@
     "require-dev": {
         "friendsofsymfony/oauth2-php": "dev-symfony-5-0-compatibility"
     },
-    "suggest": {
-        "doctrine/doctrine-bundle": "*",
-        "doctrine/mongodb-odm-bundle": "*",
-        "propel/propel-bundle": "If you want to use Propel with Symfony2, then you will have to install the PropelBundle",
-        "willdurand/propel-typehintable-behavior": "The Typehintable behavior is useful to add type hints on generated methods, to be compliant with interfaces",
-        "symfony/form" : "Needed to be able to use the AuthorizeFormType",
-        "symfony/console": "Needed to be able to use commands"
-    },
     "autoload": {
         "psr-4": { "FOS\\OAuthServerBundle\\": "" },
         "exclude-from-classmap": ["/Tests/"]
